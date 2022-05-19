@@ -30,21 +30,10 @@ struct HomeView: View {
                     ZStack {
                         NavigationLink(destination: viewModel.detailView(), tag: item.trackId, selection: $action) {
                             EmptyView()
-                            
-                            Button("read more") {
-                                self.action = 1
-                            }
-                            .foregroundColor(.red)
-                            .mask(alignment: .trailing) {
-                                //
-                            }
+                            Text("")
+                            Spacer()
                         }
                     }
-//                    Button("") {
-//                        print("🌱 detail was tapped")
-//                        viewModel.detailView()
-//                    }.frame(width: 1, height: 1, alignment: .center)
-                    
                 }
 
                 

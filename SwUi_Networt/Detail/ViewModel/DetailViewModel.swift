@@ -9,15 +9,6 @@ import SwiftUI
 
 class DetailViewModel: ObservableObject {
     
-//    @Published var uiState: detailUIState = .ok
+    @Published var uiState: DetailUIState = .ok
     
-    func selectedRow() {
-        // async job and chages uiState
-        print("🌱 home view model - didSelectRow 👍")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            // enters here after 2 seconds
-//            // server simulation
-//            self.uiState = .ok
-//        }
-    }
 }
