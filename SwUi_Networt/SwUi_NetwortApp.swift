@@ -11,7 +11,8 @@ import SwiftUI
 struct SwUi_NetwortApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            let viewModel = HomeViewModel()
+            HomeView(viewModel: viewModel)
         }
     }
 }

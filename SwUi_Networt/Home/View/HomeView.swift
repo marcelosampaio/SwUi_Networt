@@ -9,7 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @ObservedObject var viewModel: HomeViewModel
+    
+    // navigation helper
+    @State var action: Int? = 0
+    
     @State private var results = [Result]()
+    
     
     var body: some View {
         
@@ -19,9 +25,26 @@ struct HomeView: View {
                     Text("📍 \(item.trackName)")
                         .font(.headline)
                     Text(item.collectionName)
-                    Button("") {
-                        print("🌱 detail was tapped")
-                    }.frame(width: 1, height: 1, alignment: .center)
+                    
+                    //FIXME: - SelectedRow event must be fixed
+                    ZStack {
+                        NavigationLink(destination: viewModel.detailView(), tag: item.trackId, selection: $action) {
+                            EmptyView()
+                            
+                            Button("read more") {
+                                self.action = 1
+                            }
+                            .foregroundColor(.red)
+                            .mask(alignment: .trailing) {
+                                //
+                            }
+                        }
+                    }
+//                    Button("") {
+//                        print("🌱 detail was tapped")
+//                        viewModel.detailView()
+//                    }.frame(width: 1, height: 1, alignment: .center)
+                    
                 }
 
                 
@@ -61,6 +84,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        return HomeView()
+        return HomeView(viewModel: HomeViewModel())
     }
 }
