@@ -19,6 +19,7 @@
 		2D71399C2836AA9500A46F20 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71399B2836AA9500A46F20 /* HomeViewRouter.swift */; };
 		2D71399E2836AB2100A46F20 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71399D2836AB2100A46F20 /* DetailViewModel.swift */; };
 		2D7139A02836AB7600A46F20 /* DetailUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71399F2836AB7600A46F20 /* DetailUIState.swift */; };
+		2D7139A22836EA0C00A46F20 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7139A12836EA0C00A46F20 /* DetailViewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		2D71399B2836AA9500A46F20 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 		2D71399D2836AB2100A46F20 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		2D71399F2836AB7600A46F20 /* DetailUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUIState.swift; sourceTree = "<group>"; };
+		2D7139A12836EA0C00A46F20 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2D71399D2836AB2100A46F20 /* DetailViewModel.swift */,
+				2D7139A12836EA0C00A46F20 /* DetailViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				2D7139722836769000A46F20 /* Response.swift in Sources */,
 				2D71399A2836A5B700A46F20 /* HomeViewModel.swift in Sources */,
 				2D7139982836A45C00A46F20 /* HomeUIState.swift in Sources */,
+				2D7139A22836EA0C00A46F20 /* DetailViewRouter.swift in Sources */,
 				2D71399E2836AB2100A46F20 /* DetailViewModel.swift in Sources */,
 				2D71399C2836AA9500A46F20 /* HomeViewRouter.swift in Sources */,
 				2D713974283676C500A46F20 /* Result.swift in Sources */,
