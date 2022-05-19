@@ -7,23 +7,33 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
     
     @State private var results = [Result]()
     
     var body: some View {
-        List(results, id:\.trackId) {item in
-            VStack(alignment: .leading, spacing: 8) {
-                Text(item.trackName)
-                    .font(.headline)
-                Text(item.collectionName)
+        
+        NavigationView {
+            List(results, id:\.trackId) {item in
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("📍 \(item.trackName)")
+                        .font(.headline)
+                    Text(item.collectionName)
+                    Button("") {
+                        print("🌱 detail was tapped")
+                    }.frame(width: 1, height: 1, alignment: .center)
+                }
+
+                
             }
+            .task {
+                    // we need aknowlodge that loadData() must sleep untill the job is finished
+                    await loadData()
+                }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("🎸 The Beatles Songs")
         }
-        .task {
-            // we need aknowlodge that loadData() must sleep untill the job is finished
-            await loadData()
-        }
+        
     }
     
     // tells swift this method might want to go to sleep in oprder to complete its work
