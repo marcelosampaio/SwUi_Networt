@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2D713960283664E200A46F20 /* SwUi_NetwortApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71395F283664E200A46F20 /* SwUi_NetwortApp.swift */; };
-		2D713962283664E200A46F20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D713961283664E200A46F20 /* ContentView.swift */; };
+		2D713962283664E200A46F20 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D713961283664E200A46F20 /* HomeView.swift */; };
 		2D713964283664E400A46F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D713963283664E400A46F20 /* Assets.xcassets */; };
 		2D713967283664E400A46F20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D713966283664E400A46F20 /* Preview Assets.xcassets */; };
+		2D7139722836769000A46F20 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7139712836769000A46F20 /* Response.swift */; };
+		2D713974283676C500A46F20 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D713973283676C500A46F20 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D71395C283664E200A46F20 /* SwUi_Networt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwUi_Networt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D71395F283664E200A46F20 /* SwUi_NetwortApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwUi_NetwortApp.swift; sourceTree = "<group>"; };
-		2D713961283664E200A46F20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2D713961283664E200A46F20 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2D713963283664E400A46F20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D713966283664E400A46F20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D7139712836769000A46F20 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		2D713973283676C500A46F20 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,8 @@
 		2D71395E283664E200A46F20 /* SwUi_Networt */ = {
 			isa = PBXGroup;
 			children = (
+				2D71396D2836658600A46F20 /* Home */,
 				2D71395F283664E200A46F20 /* SwUi_NetwortApp.swift */,
-				2D713961283664E200A46F20 /* ContentView.swift */,
 				2D713963283664E400A46F20 /* Assets.xcassets */,
 				2D713965283664E400A46F20 /* Preview Content */,
 			);
@@ -65,6 +69,40 @@
 				2D713966283664E400A46F20 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2D71396D2836658600A46F20 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D713970283665B000A46F20 /* Model */,
+				2D71396F283665A700A46F20 /* ViewModel */,
+				2D71396E2836659D00A46F20 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2D71396E2836659D00A46F20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D713961283664E200A46F20 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D71396F283665A700A46F20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D713970283665B000A46F20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D7139712836769000A46F20 /* Response.swift */,
+				2D713973283676C500A46F20 /* Result.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D713962283664E200A46F20 /* ContentView.swift in Sources */,
+				2D713962283664E200A46F20 /* HomeView.swift in Sources */,
+				2D7139722836769000A46F20 /* Response.swift in Sources */,
+				2D713974283676C500A46F20 /* Result.swift in Sources */,
 				2D713960283664E200A46F20 /* SwUi_NetwortApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
