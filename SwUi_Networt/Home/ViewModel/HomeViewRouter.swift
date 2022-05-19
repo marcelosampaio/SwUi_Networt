@@ -10,8 +10,9 @@ import Combine
 
 enum HomeViewRouter {
     
-    static func makeDetailView() -> some View {
+    static func makeDetailView(publisher: PassthroughSubject<Bool, Never>) -> some View {
         let viewModel = DetailViewModel()
+        viewModel.publisher = publisher
         return DetailView(viewModel: viewModel)
     }
     

@@ -34,6 +34,6 @@ class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
     func detailView() -> some View {
-        return HomeViewRouter.makeDetailView()
+        return HomeViewRouter.makeDetailView(publisher: publisher)
     }
 }
