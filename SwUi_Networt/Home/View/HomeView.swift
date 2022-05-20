@@ -22,16 +22,9 @@ struct HomeView: View {
                 NavigationView {
                     List(results, id:\.trackId) {item in
                         VStack(alignment: .leading, spacing: 8) {
-                            if case HomeUIState.ok = viewModel.uiState {
-                                Text("❤️ \(item.trackName)")
-                                    .font(.headline)
-                            }else{
-                                Text("✅ \(item.trackName)")
-                                    .font(.headline)
-                            }
-                            
+                            Text("✅ \(item.trackName)")
+                                .font(.headline)
                             Text(item.collectionName)
-                            
                             //FIXME: - SelectedRow event must be fixed
                             ZStack {
                                 NavigationLink(destination: viewModel.detailView(), tag: item.trackId, selection: $action) {
