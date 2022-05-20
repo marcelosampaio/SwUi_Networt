@@ -15,13 +15,13 @@ class HomeViewModel: ObservableObject {
     private let publisher = PassthroughSubject<Result, Never>() // this is an observable object
     
     @Published var uiState: HomeUIState = .loading
-    @Published var trackId = Int()
+    @Published var trackIdState = Int()
     
     init() {
         // sink - Bloco de código a ser executado após o callback
         cancellable = publisher.sink { result in
             print("👂👍 HOME VIEW MODEL - listerning. value: \(result)")
-            self.trackId = result.trackId
+            self.trackIdState = result.trackId
             self.uiState = .notified
         }
     }

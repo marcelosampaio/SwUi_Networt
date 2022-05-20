@@ -32,7 +32,9 @@ struct DetailView: View {
             Button("❤️ Like this song") {
                 print("❤️ you liked this song")
                 viewModel.likeSong()
+
             }
+            
             .padding()
             .font(Font.callout.bold())
             

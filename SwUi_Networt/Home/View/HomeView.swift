@@ -15,7 +15,7 @@ struct HomeView: View {
     @State var action: Int? = 0
     
     @State var results = [Result]()
-    @State var trackId = Int()
+//    @State var trackIdState = Int()
 
     
     var body: some View {
@@ -25,7 +25,7 @@ struct HomeView: View {
                     
                     NavigationLink(destination: viewModel.detailView(result: result)) {
                         VStack(alignment: .leading, spacing: 8) {
-                            if viewModel.uiState == HomeUIState.notified && result.trackId == 1441133644 {
+                            if viewModel.uiState == HomeUIState.notified && result.trackId == viewModel.trackIdState {
                                 Text("❤️ \(result.trackName)")
                                     .font(.headline)
                                     .padding(.top, 4)
