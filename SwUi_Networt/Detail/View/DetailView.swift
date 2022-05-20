@@ -37,7 +37,6 @@ struct DetailView: View {
             .font(Font.callout.bold())
             
             
-            
         }
         
         

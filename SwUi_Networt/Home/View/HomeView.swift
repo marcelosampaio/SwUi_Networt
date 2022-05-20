@@ -14,38 +14,40 @@ struct HomeView: View {
     // navigation helper
     @State var action: Int? = 0
     
-    @State private var results = [Result]()
+    @State var results = [Result]()
+    @State var trackId = Int()
 
     
     var body: some View {
         ZStack {
-            if case HomeUIState.ok = viewModel.uiState {
-                viewModel.homeView()
-            }else{
-                NavigationView {
-                    List(results, id:\.id) {result in
-                        
-                        NavigationLink(destination: viewModel.detailView(result: result)) {
-                            VStack(alignment: .leading, spacing: 8) {
+            NavigationView {
+                List(results, id:\.id) {result in
+                    
+                    NavigationLink(destination: viewModel.detailView(result: result)) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            if viewModel.uiState == HomeUIState.notified && result.trackId == 1441133644 {
+                                Text("❤️ \(result.trackName)")
+                                    .font(.headline)
+                                    .padding(.top, 4)
+                            }else{
                                 Text("✅ \(result.trackName)")
                                     .font(.headline)
                                     .padding(.top, 4)
-                                Text(result.collectionName)
-                                    .padding(.top, 4)
                             }
+
+                            Text(result.collectionName)
+                                .padding(.top, 4)
                         }
                     }
-                    .task {
-                            // we need aknowlodge that loadData() must sleep untill the job is finished
-                            await loadData()
-                        }
-                    .navigationBarTitleDisplayMode(.large)
-                    .navigationTitle("🎸 The Beatles Songs")
                 }
+                .task {
+                        // we need aknowlodge that loadData() must sleep untill the job is finished
+                        await loadData()
+                    }
+                .navigationBarTitleDisplayMode(.large)
+                .navigationTitle("🎸 The Beatles Songs")
             }
         }
-
-        
     }
     
     // tells swift this method might want to go to sleep in oprder to complete its work

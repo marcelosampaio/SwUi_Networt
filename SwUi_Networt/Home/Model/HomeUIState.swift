@@ -10,6 +10,7 @@ import Foundation
 enum HomeUIState {
     case ok
     case loading
+    case notified
     case goToDetailScreen
     case error
 }
