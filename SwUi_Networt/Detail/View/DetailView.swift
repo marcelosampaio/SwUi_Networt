@@ -20,15 +20,6 @@ struct DetailView: View {
             viewModel.likeSong()
             
         }
-//        Text("✅ Detail information will be available here!\n✅ Soon!!!!! 😊")
-        
-//        ZStack {
-//            NavigationLink(destination: viewModel.homeView(), tag: 0, selection: $action) {
-//                EmptyView()
-//                Text("Tap me to return with an action")
-//                Spacer()
-//            }
-//        }
     }
 }
 

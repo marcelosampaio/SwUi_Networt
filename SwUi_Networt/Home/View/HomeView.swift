@@ -15,36 +15,40 @@ struct HomeView: View {
     @State var action: Int? = 0
     
     @State private var results = [Result]()
-    
+
     
     var body: some View {
         ZStack {
-            NavigationView {
-                List(results, id:\.trackId) {item in
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("📍 \(item.trackName)")
-                            .font(.headline)
-                        Text(item.collectionName)
-                        
-                        //FIXME: - SelectedRow event must be fixed
-                        ZStack {
-                            NavigationLink(destination: viewModel.detailView(), tag: item.trackId, selection: $action) {
-                                EmptyView()
-                                Text("")
-                                Spacer()
+                NavigationView {
+                    List(results, id:\.trackId) {item in
+                        VStack(alignment: .leading, spacing: 8) {
+                            if case HomeUIState.ok = viewModel.uiState {
+                                Text("❤️ \(item.trackName)")
+                                    .font(.headline)
+                            }else{
+                                Text("✅ \(item.trackName)")
+                                    .font(.headline)
+                            }
+                            
+                            Text(item.collectionName)
+                            
+                            //FIXME: - SelectedRow event must be fixed
+                            ZStack {
+                                NavigationLink(destination: viewModel.detailView(), tag: item.trackId, selection: $action) {
+                                    EmptyView()
+                                    Text("")
+                                    Spacer()
+                                }
                             }
                         }
                     }
-
-                    
+                    .task {
+                            // we need aknowlodge that loadData() must sleep untill the job is finished
+                            await loadData()
+                        }
+                    .navigationBarTitleDisplayMode(.large)
+                    .navigationTitle("🎸 The Beatles Songs")
                 }
-                .task {
-                        // we need aknowlodge that loadData() must sleep untill the job is finished
-                        await loadData()
-                    }
-                .navigationBarTitleDisplayMode(.large)
-                .navigationTitle("🎸 The Beatles Songs")
-            }
         }
 
         
