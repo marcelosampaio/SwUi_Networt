@@ -12,19 +12,23 @@ class HomeViewModel: ObservableObject {
     
     private var cancellable : AnyCancellable?
 
-    private let publisher = PassthroughSubject<Bool, Never>() // this is an observable object
+    private let publisher = PassthroughSubject<Result, Never>() // this is an observable object
     
     @Published var uiState: HomeUIState = .loading
 //    @Published var result = Result()
     
     init() {
         // sink - Bloco de código a ser executado após o callback
-        cancellable = publisher.sink {value in
-            print("👂👍 HOME VIEW MODEL - listerning. value: \(value)")
-            if value {
-                // time to take action
-                self.uiState = .ok
-            }
+        cancellable = publisher.sink { result in
+            print("👂👍 HOME VIEW MODEL - listerning. value: \(result)")
+            
+            self.uiState = .ok
+            
+            
+//            if value {
+//                // time to take action
+//                self.uiState = .ok
+//            }
         }
     }
     deinit {

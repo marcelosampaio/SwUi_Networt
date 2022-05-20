@@ -9,15 +9,38 @@ import SwiftUI
 
 struct DetailView: View {
     @ObservedObject var viewModel: DetailViewModel
-    
-    // navigation helper
-    @State var action: Int? = 0
-    
+
     var body: some View {
-        Button("❤️ Like this song") {
-            print("❤️ you liked this song")
-            viewModel.likeSong()
+        
+        VStack {
+            
+            Image("theBeatles")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 221, alignment: .center)
+            
+            Text("🎸 \(viewModel.result.trackName)")
+                .padding()
+                .font(Font.headline.bold())
+            
+            Text("💿 \(viewModel.result.collectionName)")
+                .padding()
+                .font(Font.subheadline.bold())
+            
+            Spacer()
+            
+            Button("❤️ Like this song") {
+                print("❤️ you liked this song")
+                viewModel.likeSong()
+            }
+            .padding()
+            .font(Font.callout.bold())
+            
+            
+            
         }
+        
+        
     }
 }
 

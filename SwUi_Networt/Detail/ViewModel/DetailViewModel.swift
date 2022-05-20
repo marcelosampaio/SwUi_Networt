@@ -11,7 +11,7 @@ import Combine
 class DetailViewModel: ObservableObject {
     
     private var cancelleable: AnyCancellable?
-    var publisher: PassthroughSubject<Bool, Never>!
+    var publisher: PassthroughSubject<Result, Never>!
     
     var result: Result!
     
@@ -25,11 +25,11 @@ class DetailViewModel: ObservableObject {
 
 extension DetailViewModel {
     func likeSong() {
-        print("❤️ (DetailViewModel) - liked a song")
+        print("❤️ (DetailViewModel) - liked a song: \(result.trackName) ")
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.uiState = .goToHomeScreen
-            self.publisher.send(true)
+            self.publisher.send(self.result)
         }
 
     }
