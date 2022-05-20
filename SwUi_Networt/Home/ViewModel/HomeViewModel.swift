@@ -22,7 +22,7 @@ class HomeViewModel: ObservableObject {
             print("👂👍 HOME VIEW MODEL - listerning. value: \(value)")
             if value {
                 // time to take action
-                print(" 👍     👂 HOME VIEW MODEL - listened! Time to action! 🔥")
+                self.uiState = .ok
             }
         }
     }

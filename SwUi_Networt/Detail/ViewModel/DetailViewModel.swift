@@ -21,7 +21,7 @@ extension DetailViewModel {
     func likeSong() {
         print("❤️ (DetailViewModel) - liked a song")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.38) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.publisher.send(true)
         }
 
