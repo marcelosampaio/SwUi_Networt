@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DetailView: View {
     @ObservedObject var viewModel: DetailViewModel
+    
+    // Current View reference, so you can dismiss it anytime!
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         
@@ -32,6 +35,8 @@ struct DetailView: View {
             Button("❤️ Like this song") {
                 print("❤️ you liked this song")
                 viewModel.likeSong()
+                self.presentationMode.wrappedValue.dismiss()
+                
 
             }
             
