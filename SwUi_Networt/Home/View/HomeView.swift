@@ -19,19 +19,19 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
+            if case HomeUIState.ok = viewModel.uiState {
+                viewModel.homeView()
+            }else{
                 NavigationView {
-                    List(results, id:\.trackId) {item in
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("✅ \(item.trackName)")
-                                .font(.headline)
-                            Text(item.collectionName)
-                            //FIXME: - SelectedRow event must be fixed
-                            ZStack {
-                                NavigationLink(destination: viewModel.detailView(), tag: item.trackId, selection: $action) {
-                                    EmptyView()
-                                    Text("")
-                                    Spacer()
-                                }
+                    List(results, id:\.id) {result in
+                        
+                        NavigationLink(destination: viewModel.detailView(result: result)) {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("✅ \(result.trackName)")
+                                    .font(.headline)
+                                    .padding(.top, 4)
+                                Text(result.collectionName)
+                                    .padding(.top, 4)
                             }
                         }
                     }
@@ -42,6 +42,7 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.large)
                     .navigationTitle("🎸 The Beatles Songs")
                 }
+            }
         }
 
         
@@ -61,7 +62,7 @@ struct HomeView: View {
             }
             
         }catch {
-            print("❌ invalid data")
+            print("❌ loadData() invalid data")
             return
         }
         

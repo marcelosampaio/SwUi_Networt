@@ -7,8 +7,15 @@
 
 import Foundation
 
-struct Result: Codable {
+struct Result: Codable, Identifiable {
+    let id = UUID()
     var trackId: Int
     var trackName: String
     var collectionName: String
+    
+    init() {
+        self.trackId = Int()
+        self.trackName = String()
+        self.collectionName = String()
+    }
 }

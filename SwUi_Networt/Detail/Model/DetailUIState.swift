@@ -8,6 +8,7 @@
 import Foundation
 
 enum DetailUIState {
-    case ok
+    case none
+    case loaded
     case goToHomeScreen
 }

@@ -13,7 +13,13 @@ class DetailViewModel: ObservableObject {
     private var cancelleable: AnyCancellable?
     var publisher: PassthroughSubject<Bool, Never>!
     
-    @Published var uiState: DetailUIState = .ok
+    var result: Result!
+    
+    @Published var uiState: DetailUIState = .loaded
+    
+    init(result: Result) {
+        self.result = result
+    }
     
 }
 
@@ -22,6 +28,7 @@ extension DetailViewModel {
         print("❤️ (DetailViewModel) - liked a song")
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.uiState = .goToHomeScreen
             self.publisher.send(true)
         }
 

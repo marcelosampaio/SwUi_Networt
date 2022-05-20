@@ -15,6 +15,7 @@ class HomeViewModel: ObservableObject {
     private let publisher = PassthroughSubject<Bool, Never>() // this is an observable object
     
     @Published var uiState: HomeUIState = .loading
+//    @Published var result = Result()
     
     init() {
         // sink - Bloco de código a ser executado após o callback
@@ -33,7 +34,13 @@ class HomeViewModel: ObservableObject {
 }
 
 extension HomeViewModel {
-    func detailView() -> some View {
-        return HomeViewRouter.makeDetailView(publisher: publisher)
+    func detailView(result: Result) -> some View {
+        return HomeViewRouter.makeDetailView(publisher: publisher, result: result)
+    }
+}
+
+extension HomeViewModel {
+    func homeView() -> some View {
+        return HomeViewRouter.makeHomeView(publisher: publisher)
     }
 }
