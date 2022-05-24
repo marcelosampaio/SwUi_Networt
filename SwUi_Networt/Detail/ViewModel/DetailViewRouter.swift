@@ -8,11 +8,6 @@
 import SwiftUI
 
 enum DetailViewRouter {
-    
-    static func makeHomeView() -> some View {
-        let viewModel = HomeViewModel()
-        return HomeView(viewModel: viewModel)
-    }
-    
+
     
 }

@@ -16,10 +16,4 @@ enum HomeViewRouter {
         return DetailView(viewModel: viewModel)
     }
     
-    static func makeHomeView(publisher: PassthroughSubject<Result, Never>) -> some View {
-        let viewModel = HomeViewModel()
-//        viewModel.publisher = publisher
-        return HomeView(viewModel: viewModel)
-    }
-    
 }

@@ -34,8 +34,4 @@ extension DetailViewModel {
 
     }
 }
-extension DetailViewModel {
-    func homeView() -> some View {
-        return DetailViewRouter.makeHomeView()
-    }
-}
+

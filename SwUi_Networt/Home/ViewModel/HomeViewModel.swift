@@ -36,9 +36,3 @@ extension HomeViewModel {
         return HomeViewRouter.makeDetailView(publisher: publisher, result: result)
     }
 }
-
-extension HomeViewModel {
-    func homeView() -> some View {
-        return HomeViewRouter.makeHomeView(publisher: publisher)
-    }
-}
