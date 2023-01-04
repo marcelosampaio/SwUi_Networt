@@ -47,6 +47,7 @@ struct HomeView: View {
                 .navigationBarTitleDisplayMode(.large)
                 .navigationTitle("🎸 The Beatles Songs")
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
     

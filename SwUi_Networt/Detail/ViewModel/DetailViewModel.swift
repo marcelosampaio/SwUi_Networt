@@ -31,7 +31,7 @@ extension DetailViewModel {
             self.uiState = .goToHomeScreen
             self.publisher.send(self.result)
         }
-
+        
     }
 }
 
